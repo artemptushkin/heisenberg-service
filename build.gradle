@@ -25,6 +25,19 @@ repositories {
 
 contracts {
 	baseClassForTests = 'ru.alfabank.contracts.heisenbergservice.BaseContractsTest'
+	contractsPath = '/'
+}
+
+publishStubsToScm {
+	customize {
+		contractDependency {
+			stringNotation = "${project.group}:${project.name}:${project.version}"
+		}
+		contractRepository {
+			repositoryUrl = "git://git@github.com:artemptushkin/spring-cloud-contract-git-repo.git"
+		}
+		contractsMode = 'REMOTE'
+	}
 }
 
 idea {
