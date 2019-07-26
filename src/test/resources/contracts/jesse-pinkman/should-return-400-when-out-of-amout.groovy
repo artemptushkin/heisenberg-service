@@ -11,7 +11,7 @@ Contract.make {
 			amount: 1000
 		)
 		bodyMatchers {
-			jsonPath('$.amount', byRegex('^[0-9]{4}$'))
+			jsonPath('$.amount', byEquality())
 		}
 	}
 	response {

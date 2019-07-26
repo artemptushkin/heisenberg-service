@@ -11,7 +11,7 @@ Contract.make {
 			amount: 200
 		)
 		bodyMatchers {
-			jsonPath('$.amount', byRegex('^[0-9]{1,3}$'))
+			jsonPath('$.amount', byEquality())
 		}
 	}
 	response {
@@ -21,7 +21,7 @@ Contract.make {
 		}
 		body(
 			amount: fromRequest().body('$.amount'),
-			price: 10000.0d
+			price: 10000d
 		)
 		bodyMatchers {
 			jsonPath('$.amount', byRegex('^\\d*$'))
