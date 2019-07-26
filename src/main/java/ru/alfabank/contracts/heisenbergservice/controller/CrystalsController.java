@@ -15,12 +15,14 @@ import java.math.BigDecimal;
 @RequestMapping("/blueCrystals")
 public class CrystalsController {
 
-	private static final Double PRICE = 50.5;
+	private static final Double PRICE = 50.0;
 
 	@PostMapping("/create")
 	@ResponseStatus(HttpStatus.CREATED)
 	public AmountResponse create(@Valid @AmountRequestConstraint @RequestBody AmountRequest amountRequest) {
-		return new AmountResponse(amountRequest.getAmount(), BigDecimal.valueOf(amountRequest.getAmount() * PRICE));
+		return new AmountResponse()
+			.setAmount(amountRequest.getAmount())
+			.setPrice(BigDecimal.valueOf(amountRequest.getAmount() * PRICE));
 	}
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -26,6 +26,7 @@ repositories {
 contracts {
 	baseClassForTests = 'ru.alfabank.contracts.heisenbergservice.BaseContractsTest'
 	contractsPath = '/'
+	contractsDslDir = new File("${project.rootDir}/src/test/resources/contracts")
 }
 
 publishStubsToScm {

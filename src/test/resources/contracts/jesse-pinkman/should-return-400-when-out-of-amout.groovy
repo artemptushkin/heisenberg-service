@@ -5,7 +5,7 @@ Contract.make {
 		method 'POST'
 		url '/blueCrystals/create'
 		headers {
-			header 'Content-Type' : 'application/json'
+			header 'Content-Type' : 'application/json;charset=UTF-8'
 		}
 		body(
 			amount: 1000

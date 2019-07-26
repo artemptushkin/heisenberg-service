@@ -5,7 +5,7 @@ Contract.make {
 		method 'POST'
 		url '/blueCrystals/create'
 		headers {
-			header 'Content-Type' : 'application/json'
+			header 'Content-Type' : 'application/json;charset=UTF-8'
 		}
 		body(
 			amount: 200
@@ -16,9 +16,12 @@ Contract.make {
 	}
 	response {
 		status 201
+		headers {
+			header 'Content-Type' : 'application/json;charset=UTF-8'
+		}
 		body(
 			amount: fromRequest().body('$.amount'),
-			price: 10100.0d
+			price: 10000.0d
 		)
 		bodyMatchers {
 			jsonPath('$.amount', byRegex('^\\d*$'))
