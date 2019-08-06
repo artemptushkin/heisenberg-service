@@ -21,8 +21,8 @@ public class CrystalsController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public AmountResponse create(@Valid @AmountRequestConstraint @RequestBody AmountRequest amountRequest) {
 		return new AmountResponse()
-			.setAmount(amountRequest.getAmount())
-			.setPrice(BigDecimal.valueOf(amountRequest.getAmount() * PRICE));
+			.setAmount(amountRequest.getQuantity())
+			.setPrice(BigDecimal.valueOf(amountRequest.getQuantity() * PRICE));
 	}
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)

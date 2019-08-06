@@ -14,7 +14,7 @@ public class AmountRequestValidator implements ConstraintValidator<AmountRequest
 
    @Override
    public boolean isValid(AmountRequest amountRequest, ConstraintValidatorContext context) {
-      Integer amount = amountRequest.getAmount();
+      Integer amount = amountRequest.getQuantity();
       if (amount == null) return acceptNull;
       return amount < 1000 && amount >= 0;
    }
