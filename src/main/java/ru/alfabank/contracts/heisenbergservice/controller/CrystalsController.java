@@ -17,7 +17,7 @@ public class CrystalsController {
 
 	private static final Double PRICE = 50.0;
 
-	@PostMapping("/create")
+	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public AmountResponse create(@Valid @AmountRequestConstraint @RequestBody AmountRequest amountRequest) {
 		return new AmountResponse()
